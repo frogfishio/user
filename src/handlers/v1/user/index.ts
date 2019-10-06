@@ -7,7 +7,7 @@ const ADMIN_ROLE = 'user_admin';
 export default class UserHander extends BaseHandler {
   constructor(engine: Engine, user) {
     super(engine, user);
-    logger = engine.log.log('@user');
+    logger = engine.log.log('service:user');
   }
 
   async get(req, res, next) {

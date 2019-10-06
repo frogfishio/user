@@ -4,7 +4,7 @@ export default class UserEmailHandler {
   private api;
 
   constructor(private engine, private user) {
-    logger = engine.log.log('@user-email');
+    logger = engine.log.log('service:user:email');
     this.api = this.engine.user;
   }
 

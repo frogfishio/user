@@ -8,7 +8,7 @@
     "watch": "gulp prepare-debug; tsc -w",
     "build": "gulp build",
     "clean-build": "gulp clean; gulp build",
-    "dist": "gulp build; npm version patch; cd build/release; npm publish --access public"
+    "dist": "npm version patch; gulp clean; gulp build; cd build/release; npm publish; git push origin master --access public"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/frogfishio/user#readme",
   "dependencies": {
-    "@frogfish/engine": "^1.0.18"
+    "@frogfish/engine": "^1.0.24"
   },
   "devDependencies": {
     "del": "^5.1.0",
