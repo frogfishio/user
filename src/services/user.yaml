@@ -474,55 +474,7 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
-  '/users':
-    get:
-      summary: Get a list of all users
-      description: |
-        Returns array of files information
-      tags:
-        - Users
-      responses:
-        '200':
-          description: An array of files
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/User'
-        default:
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
-      security:
-        - user_auth:
-            - 'read_users'
-  '/users/skip/{skip}':
-    get:
-      summary: Get a list of users
-      description: |
-        Returns array of files information
-      parameters:
-        - name: skip
-          in: path
-          description: File identifier
-          required: true
-          type: number
-      tags:
-        - Users
-      responses:
-        '200':
-          description: An array of files
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/User'
-        default:
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
-      security:
-        - user_auth:
-            - 'read_users'
-  '/users/skip/{skip}/limit/{limit}':
+  '/users/{skip}/{limit}':
     get:
       summary: Get a list of users
       description: |

@@ -4,7 +4,7 @@ export default class UserPasswordResetHandler {
   private api;
 
   constructor(private engine, private user) {
-    logger = engine.log.log('@user-password-reset');
+    logger = engine.log.log('service:user:reset');
     this.api = this.engine.user;
   }
 

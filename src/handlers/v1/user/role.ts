@@ -4,7 +4,7 @@ export default class UserRoleHandler {
   private api;
 
   constructor(private engine, private user) {
-    logger = engine.log.log('@user-role');
+    logger = engine.log.log('service:user:role');
     this.api = this.engine.user;
   }
 

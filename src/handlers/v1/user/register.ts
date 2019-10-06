@@ -5,7 +5,7 @@ export default class UserRegisterHandler {
   private authAPI;
 
   constructor(private engine, private user) {
-    logger = engine.log.log('@user-register');
+    logger = engine.log.log('service:user:register');
     this.userAPI = this.engine.user;
     this.authAPI = this.engine.auth;
   }

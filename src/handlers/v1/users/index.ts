@@ -4,7 +4,7 @@ let logger;
 
 export default class UsersService {
   constructor(private engine: Engine, private user) {
-    logger = engine.log.log('@users');
+    logger = engine.log.log('service:users');
   }
 
   async get(req, res, params, callback) {

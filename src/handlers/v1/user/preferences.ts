@@ -4,7 +4,7 @@ export default class UserPreferencesHandler {
   private api;
 
   constructor(private engine, private user) {
-    logger = engine.log.log('@user-preferences');
+    logger = engine.log.log('service:user:preferences');
     this.api = this.engine.user;
   }
 

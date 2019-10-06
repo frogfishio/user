@@ -4,7 +4,7 @@ export default class UserVerifyHandler {
   private api;
 
   constructor(private engine, private user) {
-    logger = engine.log.log('@user-verify');
+    logger = engine.log.log('service:user:verify');
     this.api = this.engine.user;
   }
 

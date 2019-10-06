@@ -6,7 +6,7 @@ export default class UserPasswordHandler {
   private api;
 
   constructor(private engine, private user) {
-    logger = engine.log.log('@user-password');
+    logger = engine.log.log('service:user:password');
     this.api = this.engine.user;
   }
 
