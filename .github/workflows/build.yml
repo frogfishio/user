@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: frogfishio/ci
+    - uses: frogfishio/ci@v1
     - name: Install packages
       run: npm install --no-bin-links
     - name: build service
