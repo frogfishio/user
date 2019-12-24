@@ -12,19 +12,9 @@ jobs:
       run: npm install --no-bin-links
     - name: build service
       run: npm build
-    - uses: manusa/actions-publish-docker@v1.0.1
+    - name: Publish to Registry
+      uses: HurricanKai/Publish-Docker-Github-Action@master
       with:
-        # Name of the Docker image
-        name: frogfishio/kona-user 
-          # # Tag for the Docker image
-          # tag: # optional
-          # # Script body to compute tag name for the Docker image, has context as the main function argument
-          # tag script: # optional
-          # # Username for Docker registry
+        name: frogfishio/user
         username: frogfishio
-          # # Password for Docker registry
         password: ${{ secrets.DOCKERHUB_SECRET }}
-          # # Registry URL
-          # registry: # optional
-          # # Don't skip pull requests
-          # include pull requests: # optional
