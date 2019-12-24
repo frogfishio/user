@@ -12,6 +12,10 @@ jobs:
       run: npm install --no-bin-links
     - name: build service
       run: npm build
+    - name: PWD
+      run: pwd
+    - name: LS
+      run: ls -lasi
     - name: Publish to Registry
       uses: HurricanKai/Publish-Docker-Github-Action@master
       with:
