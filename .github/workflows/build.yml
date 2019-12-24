@@ -23,7 +23,7 @@ jobs:
           # # Username for Docker registry
         username: frogfishio
           # # Password for Docker registry
-        password: $DOCKERHUB_SECRET
+        password: ${{ secrets.DOCKERHUB_SECRET }}
           # # Registry URL
           # registry: # optional
           # # Don't skip pull requests
