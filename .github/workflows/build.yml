@@ -21,9 +21,9 @@ jobs:
           # # Script body to compute tag name for the Docker image, has context as the main function argument
           # tag script: # optional
           # # Username for Docker registry
-          # username: 
+        username: frogfishio
           # # Password for Docker registry
-          # password: 
+        password: $DOCKERHUB_SECRET
           # # Registry URL
           # registry: # optional
           # # Don't skip pull requests
