@@ -11,7 +11,7 @@ jobs:
     - name: Install packages
       run: npm install --no-bin-links
     - name: build service
-      run: npm build
+      run: npm run build
     - name: PWD
       run: pwd
     - name: LS
