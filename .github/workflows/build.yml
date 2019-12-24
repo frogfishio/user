@@ -6,19 +6,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/setup-node@v1.1.0
     - uses: actions/checkout@v1
+    - uses: frogfishio/ci
     - name: Install packages
       run: npm install --no-bin-links
     - name: build service
       run: npm build
-    - name: PWD
-      run: pwd
-    - name: LS
-      run: ls -lasi
-    - name: Publish to Registry
-      uses: HurricanKai/Publish-Docker-Github-Action@master
-      with:
-        name: frogfishio/user
-        username: frogfishio
-        password: ${{ secrets.DOCKERHUB_SECRET }}
+    - run: docker build --rm -t frogfishio/user -f .deploy/api.dockerfile .
+    - run: docker push frogfishio/user:latest
+    # - uses: actions/checkout@v1
+    # - name: Install packages
+    #   run: npm install --no-bin-links
+    # - name: build service
+    #   run: npm build
+    # - name: PWD
+    #   run: pwd
+    # - name: LS
+    #   run: ls -lasi
+    # - name: Publish to Registry
+    #   uses: HurricanKai/Publish-Docker-Github-Action@master
+    #   with:
+    #     name: frogfishio/user
+    #     username: frogfishio
+    #     password: ${{ secrets.DOCKERHUB_SECRET }}
