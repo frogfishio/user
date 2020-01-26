@@ -52,7 +52,3 @@ user:
       password: testpassword
       roles:
         - admin
-    - email: test@frogfish.io
-      password: testpassword
-      roles:
-        - member
