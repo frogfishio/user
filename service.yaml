@@ -19,6 +19,11 @@ db:
   type: mongo
   host: localhost
 
+# User uses cache for permissions
+cache:
+  type: global
+  ttl: 60
+
 auth:
   bearerTokenTTL: 3600 # default
 
