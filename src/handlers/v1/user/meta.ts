@@ -12,7 +12,7 @@ export default class UserPreferencesHandler {
     const split = req.path.split('/');
     const userId = split[3];
 
-    require('@frogfish/engine/util/authorize')(this.user, 'write_users')
+    require('@frogfish/kona/util/authorize')(this.user, 'write_users')
       .then(() => {
         return this.api.updatePreferences(userId, req.body);
       })

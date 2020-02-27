@@ -12,7 +12,7 @@ export default class UserEmailHandler {
     const split = req.path.split('/');
     const userId = split[3];
 
-    require('@frogfish/engine/util/authorize')(this.user, 'write_users')
+    require('@frogfish/kona/util/authorize')(this.user, 'write_users')
       .then(() => {
         return this.api.updateEmail(userId, req.body.newemail, req.body.password);
       })

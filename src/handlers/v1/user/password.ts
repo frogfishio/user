@@ -1,4 +1,4 @@
-import { ApplicationError } from '@frogfish/engine/error';
+import { ApplicationError } from '@frogfish/kona/error';
 
 let logger;
 
@@ -14,7 +14,7 @@ export default class UserPasswordHandler {
     const split = req.path.split('/');
     const userId = split[3];
 
-    require('@frogfish/engine/util/authorize')(this.user, 'write_users')
+    require('@frogfish/kona/util/authorize')(this.user, 'write_users')
       .then(() => {
         return this.api.updatePassword(userId, req.body.password, req.body.newpassword);
       })

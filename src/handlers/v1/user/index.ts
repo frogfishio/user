@@ -1,4 +1,4 @@
-import { Engine } from '@frogfish/engine';
+import { Engine } from '@frogfish/kona';
 import { BaseHandler } from '../../base';
 
 let logger;
@@ -47,7 +47,7 @@ export default class UserHander extends BaseHandler {
   // async put(req, res, next) {
   //   const userId = req.path.split('/')[3];
 
-  //   require('@frogfish/engine/util/authorize')(this.user, 'write_users')
+  //   require('@frogfish/kona/util/authorize')(this.user, 'write_users')
   //     .then(() => {
   //       return this.engine.user.updateMeta(userId, req.body);
   //     })
