@@ -52,8 +52,3 @@ user:
     avatar:
       mandatory: false
 
-  users:
-    - email: testadmin@frogfish.io
-      password: testpassword
-      roles:
-        - admin
