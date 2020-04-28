@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/frogfishio/user#readme",
   "dependencies": {
-    "@frogfish/kona": "^2.0.18"
+    "@frogfish/kona": "^2.1.1"
   },
   "devDependencies": {
     "del": "^5.1.0",
