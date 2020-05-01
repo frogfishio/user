@@ -30,7 +30,7 @@ paths:
             $ref: '#/definitions/Error'
       security:
         - user_auth:
-            - 'write_users'
+            - 'create_users'
   '/user/{id}':
     get:
       summary: Get user by id
@@ -83,7 +83,7 @@ paths:
             $ref: '#/definitions/Error'
       security:
         - user_auth:
-            - 'read_users'
+            - 'modify_users'
     delete:
       summary: Delets user
       description: |
@@ -109,7 +109,7 @@ paths:
             $ref: '#/definitions/Error'
       security:
         - user_auth:
-            - 'write_users'
+            - delete_users'
   '/user/{id}/password':
     put: # Manual Authorisation
       summary: Updates user password
@@ -189,7 +189,7 @@ paths:
             $ref: '#/definitions/Error'
       security:
         - user_auth:
-            - 'write_users'
+            - 'modify_users'
     delete:
       summary: Removes role from user
       description: |
@@ -220,7 +220,7 @@ paths:
             $ref: '#/definitions/Error'
       security:
         - user_auth:
-            - 'write_users'
+            - 'delete_users'
   '/user/{id}/roles':
     get:
       summary: Lists user roles
@@ -350,42 +350,6 @@ paths:
       consumes: 
         - multipart/form-data
       parameters:
-        - name: email
-          in: formData
-          description: Email address
-          required: true
-          type: string
-        - name: password
-          in: formData
-          description: Password of a user
-          required: true
-          type: string
-      tags:
-        - User self
-      responses:
-        '200':
-          description: An array of files
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/User'
-        default:
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
-  /user/register/{context}:
-    post:
-      summary: Register user in context
-      description: |
-        Registers the user in context
-      consumes: 
-        - multipart/form-data
-      parameters:
-        - name: context
-          in: path
-          description: Context name
-          required: true
-          type: string
         - name: email
           in: formData
           description: Email address

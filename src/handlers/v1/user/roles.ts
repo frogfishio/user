@@ -5,20 +5,16 @@ export default class UserRolesHandler {
 
   constructor(private engine, private user) {
     logger = engine.log.log('service:user:roles');
-    this.api = this.engine.user;
   }
 
-  get(req, res, params, callback) {
+  async get(req, res, params, callback) {
     const split = req.path.split('/');
     const userId = split[3];
 
-    this.api
-      .listUserRoles(userId)
-      .then(result => {
-        res.json(result);
-      })
-      .catch(err => {
-        return err.send(res);
-      });
+    try {
+      res.json(await this.engine.user.getUserRoles(userId));
+    } catch (err) {
+      return err.send(res);
+    }
   }
 }
