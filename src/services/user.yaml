@@ -189,7 +189,7 @@ paths:
             $ref: '#/definitions/Error'
       security:
         - user_auth:
-            - 'modify_users'
+            - 'modify_user_roles'
     delete:
       summary: Removes role from user
       description: |
@@ -220,7 +220,7 @@ paths:
             $ref: '#/definitions/Error'
       security:
         - user_auth:
-            - 'delete_users'
+            - 'modify_user_roles'
   '/user/{id}/roles':
     get:
       summary: Lists user roles
