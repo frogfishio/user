@@ -21,13 +21,19 @@
   },
   "homepage": "https://github.com/frogfishio/user#readme",
   "dependencies": {
-    "@frogfish/kona": "^2.1.1"
+    "@frogfish/kona": "^2.1.12"
   },
   "devDependencies": {
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.13.5",
+    "chai": "^4.2.0",
+    "chai-like": "^1.1.1",
+    "chai-things": "^0.2.0",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-typescript": "^5.0.1",
     "mkdirp": "^0.5.5",
+    "mocha": "^7.1.2",
     "typescript": "^3.8.3"
   }
 }
