@@ -14,7 +14,7 @@ export default class UserRolesHandler {
     try {
       res.json(await this.engine.user.getUserRoles(userId));
     } catch (err) {
-      return err.send(res);
+      require('@frogfish/kona/util').error(err, res, logger, 'svc_user_roles_get');
     }
   }
 }

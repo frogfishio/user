@@ -31,7 +31,7 @@ export default class UsersService {
       const result = await this.engine.user.find(criteria, skip, limit);
       return res.json(result);
     } catch (err) {
-      return err.send(res);
+      require('@frogfish/kona/util').error(err, res, logger, 'svc_users_get');
     }
   }
 }

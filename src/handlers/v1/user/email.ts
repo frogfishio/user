@@ -16,21 +16,21 @@ export default class UserEmailHandler {
       .then(() => {
         return this.api.updateEmail(userId, req.body.newemail, req.body.password);
       })
-      .then(result => {
+      .then((result) => {
         return res.json(result);
       })
-      .catch(err => {
+      .catch((err) => {
         if (err && err.error === 'insufficient_scope' && this.user.id === userId) {
           return this.api.updateEmail(userId, req.body.newemail, req.body.password);
         }
 
         return Promise.reject(err);
       })
-      .then(result => {
+      .then((result) => {
         return res.json(result);
       })
-      .catch(err => {
-        return err.send(res);
+      .catch((err) => {
+        require('@frogfish/kona/util').error(err, res, logger, 'svc_user_email_put');
       });
   }
 }

@@ -18,21 +18,21 @@ export default class UserPasswordHandler {
       .then(() => {
         return this.api.updatePassword(userId, req.body.password, req.body.newpassword);
       })
-      .then(result => {
+      .then((result) => {
         return res.json(result);
       })
-      .catch(err => {
+      .catch((err) => {
         if (err && err.error === 'insufficient_scope' && this.user.id === userId) {
           return this.api.updatePassword(userId, req.body.password, req.body.newpassword);
         }
 
         return Promise.reject(err);
       })
-      .then(result => {
+      .then((result) => {
         return res.json(result);
       })
-      .catch(err => {
-        return err.send(res);
+      .catch((err) => {
+        require('@frogfish/kona/util').error(err, res, logger, 'svc_user_password_put');
       });
   }
 }

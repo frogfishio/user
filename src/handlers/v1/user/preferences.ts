@@ -16,21 +16,21 @@ export default class UserPreferencesHandler {
       .then(() => {
         return this.api.updatePreferences(userId, req.body);
       })
-      .then(result => {
+      .then((result) => {
         return res.json(result);
       })
-      .catch(err => {
+      .catch((err) => {
         if (err && err.error === 'insufficient_scope' && this.user.id === userId) {
           return this.api.updatePreferences(userId, req.body);
         }
 
         return Promise.reject(err);
       })
-      .then(result => {
+      .then((result) => {
         return res.json(result);
       })
-      .catch(err => {
-        return err.send(res);
+      .catch((err) => {
+        require('@frogfish/kona/util').error(err, res, logger, 'svc_user_preferences_put');
       });
   }
 }

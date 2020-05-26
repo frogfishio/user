@@ -19,13 +19,12 @@ export default class UserRegisterHandler {
       const token = await this.authAPI.authenticate({
         grant_type: 'password',
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
       });
 
       return res.json(token);
     } catch (err) {
-      console.log(`ERR1: ${JSON.stringify(err)}`);
-      return err.send(res);
+      require('@frogfish/kona/util').error(err, res, logger, 'svc_user_register_post');
     }
   }
 }

@@ -17,7 +17,7 @@ export default class UserHander extends BaseHandler {
     try {
       res.json(await this.engine.user.get(userId));
     } catch (err) {
-      return err.send(res);
+      require('@frogfish/kona/util').error(err, res, logger, 'svc_user_get');
     }
   }
 
@@ -28,7 +28,7 @@ export default class UserHander extends BaseHandler {
     try {
       res.json(await this.engine.user.create(req.body, accountData, options));
     } catch (err) {
-      return err.send(res);
+      require('@frogfish/kona/util').error(err, res, logger, 'svc_user_post');
     }
   }
 
@@ -38,36 +38,9 @@ export default class UserHander extends BaseHandler {
     try {
       res.json(await this.engine.user.update(userId, req.body));
     } catch (err) {
-      console.error(err);
-      return err.send(res);
+      require('@frogfish/kona/util').error(err, res, logger, 'svc_user_put');
     }
   }
-
-  // // DEPRECATED
-  // async put(req, res, next) {
-  //   const userId = req.path.split('/')[3];
-
-  //   require('@frogfish/kona/util/authorize')(this.user, 'write_users')
-  //     .then(() => {
-  //       return this.engine.user.updateMeta(userId, req.body);
-  //     })
-  //     .then(result => {
-  //       return res.json(result);
-  //     })
-  //     .catch(err => {
-  //       if (err && err.error === 'insufficient_scope' && this.user.id === userId) {
-  //         return this.engine.user.updateMeta(userId, req.body);
-  //       }
-
-  //       return Promise.reject(err);
-  //     })
-  //     .then(result => {
-  //       return res.json(result);
-  //     })
-  //     .catch(err => {
-  //       return err.send(res);
-  //     });
-  // }
 
   async delete(req, res, next) {
     const userId = req.path.split('/')[3];
@@ -75,7 +48,7 @@ export default class UserHander extends BaseHandler {
     try {
       res.json(await this.engine.user.remove(userId));
     } catch (err) {
-      err.send(res);
+      require('@frogfish/kona/util').error(err, res, logger, 'svc_user_del');
     }
   }
 }

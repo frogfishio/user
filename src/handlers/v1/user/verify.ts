@@ -12,7 +12,7 @@ export default class UserVerifyHandler {
     try {
       return res.json(await this.api.verify(req.body.code));
     } catch (err) {
-      err.send(res);
+      require('@frogfish/kona/util').error(err, res, logger, 'svc_user_verify_put');
     }
   }
 }

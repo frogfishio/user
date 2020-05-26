@@ -20,7 +20,7 @@ export default class UserPasswordResetHandler {
     try {
       res.json(await this.api.updatePasswordByResetCode(req.path.split('/')[4], req.body.password));
     } catch (err) {
-      err.send(res);
+      require('@frogfish/kona/util').error(err, res, logger, 'svc_user_reset_put');
     }
   }
 }

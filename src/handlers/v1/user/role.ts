@@ -15,11 +15,11 @@ export default class UserRoleHandler {
 
     this.api
       .addRoleToUser(userId, roleId)
-      .then(result => {
+      .then((result) => {
         res.json(result);
       })
-      .catch(err => {
-        return err.send(res);
+      .catch((err) => {
+        require('@frogfish/kona/util').error(err, res, logger, 'svc_user_role_put');
       });
   }
 
@@ -30,11 +30,11 @@ export default class UserRoleHandler {
 
     this.api
       .removeRoleFromUser(userId, roleId)
-      .then(result => {
+      .then((result) => {
         res.json(result);
       })
-      .catch(err => {
-        return err.send(res);
+      .catch((err) => {
+        require('@frogfish/kona/util').error(err, res, logger, 'svc_user_role_del');
       });
   }
 }
