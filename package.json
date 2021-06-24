@@ -20,9 +20,6 @@
     "url": "https://github.com/frogfishio/user/issues"
   },
   "homepage": "https://github.com/frogfishio/user#readme",
-  "dependencies": {
-    "@frogfish/kona": "^2.2.42"
-  },
   "devDependencies": {
     "@types/mocha": "^7.0.2",
     "@types/node": "^13.13.40",
@@ -35,5 +32,8 @@
     "mkdirp": "^0.5.5",
     "mocha": "^7.2.0",
     "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@frogfish/kona": "^2.2.50"
   }
 }
