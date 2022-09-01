@@ -1,6 +1,6 @@
 {
   "name": "@frogfish/user",
-  "version": "1.0.26",
+  "version": "3.0.0",
   "description": "User Service for Frogfish engine",
   "main": "gulpfile.js",
   "scripts": {
@@ -34,6 +34,6 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "@frogfish/kona": "^2.2.54"
+    "@frogfish/kona": "^3.0.6"
   }
 }
