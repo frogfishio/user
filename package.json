@@ -1,6 +1,6 @@
 {
   "name": "@frogfish/user",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "User Service for Frogfish engine",
   "main": "gulpfile.js",
   "scripts": {
